@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html lang="uk">
     <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Архітектура</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .Table,
+            .Forms {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+        
+            .Table.show,
+            .Forms.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
     </head>
     <body>
    <!-- Wrapper --> 
@@ -14,23 +31,47 @@
 
         <!-- Introduction --> 
 
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Головна сторінка</a>
+            <a href="#news">Новини</a>
+            <a href="#contact">Контакти</a>
+            <a href="#about">Блог</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+</script>
+
+        
+
 <div class="introduction"> 
 
-<h1 class="topic"> 10 ТИСЯЧ РОКІВ АРХІТЕКТУРИ</h1> 
+<h1 id="topic"> 10 ТИСЯЧ РОКІВ АРХІТЕКТУРИ</h1> 
 
-<h2 class="subtopic"> Якими були головні стилі в архітектурі — і як їх перевідкривають зараз.</h2> 
+<h2 id="subtopic"> Якими були головні стилі в архітектурі — і як їх перевідкривають зараз.</h2> 
 
 
 
 <p class="text-introduction">  
 
-        <p>Вважати, що всі архітектурні стилі — радикально різні, не дуже правильно.  
+        <p style="font-family: 'Times New Roman'">Вважати, що всі архітектурні стилі — радикально різні, не дуже правильно.  
 
     Так, щоб відрізнити радянську хрущовку від готичного замку, вчитись на архітектора не потрібно.  
 
     Але неочевидних моментів теж багато: наприклад, де бароко, а де — рококо, помітить тільки навчене око. </p> 
 
-        <p>Щоб прокачати скіл не просто дивитись на архітектуру, а справді бачити (і розуміти) її, однієї статті замало.  
+        <p style="font-family: 'Times New Roman'">Щоб прокачати скіл не просто дивитись на архітектуру, а справді бачити (і розуміти) її, однієї статті замало.  
 
     Тому ми сфокусувались на базі: зібрали сім ключових стилів в архітектурі та розповіли про їхні фічі —  
 
@@ -38,13 +79,13 @@
 
     як його інтерпретують сучасні архітектори та дизайнери. </p> 
 
-</p> 
+        </p> 
 
 </div>   
 
     <ol> 
         <!-- First style (Romanesque style)-->
-        <li>  
+        <li class="romanesque-style">  
          <strong>Романський стиль (X–XII століття)</strong> <br>  
 
         <p>Перші християни вірили, що в 1000 році станеться апокаліпсис. Це наганяло страх, тому вони почали масово будувати церкви —  
@@ -124,7 +165,7 @@
         </li> 
 
 
- <li>
+ <li class="gothic-style">
     <!-- Second style (Gothic)-->
     <strong>Готика (XII–XVI століття)</strong> <br>
     <p>
@@ -183,7 +224,7 @@
  </li>
 
 
- <li>
+ <li class="renaissance-style">
      <!-- Third style (Renaissance)-->
      <strong>Ренесанс (XV–XVI століття)</strong> <br>
      <p> 
@@ -238,7 +279,7 @@
     </dl> 
  </li>
 
-<li> 
+<li class="baroque-style"> 
     <!-- Fourth style (Baroque)-->
     <strong>Бароко (XVI–XVIII століття)</strong> <br>
     <p>Бароко придумали лідери Контрреформації, щоб переманити людей з протестантської церкви до католицької. 
@@ -295,7 +336,7 @@
         </dl> 
 </li>
 
-<li>
+<li class="classicism-style">
     <!-- Fifth style (Classicism)-->
     <strong>Класицизм (XVIII–XIX століття)</strong> <br>
     <p> В період класицизму архітектори востаннє так масово повертались до римських традицій (наступні стилі, навпаки, пробували від них відмежуватись). 
@@ -343,7 +384,7 @@
         </dl> 
 </li>
 
-<li> 
+<li class="eclecticism-style"> 
     <!-- Sixth style (Eclecticism)-->
     <strong>Класицизм (XVIII–XIX століття)</strong> <br>
     <p> Дуже важко знайти будівлю, зроблену суворо в одному стилі. 
@@ -384,7 +425,7 @@
         </dl>
 </li>
 
-<li>
+<li class="art-nouveau-style">
     <!-- Seventh style (Art nouveau)-->
     <strong>Ар-нуво (XIX&ndash;XX століття)</strong> <br>
     <p>Кажуть, що промислове виробництво й технології вбили «ауру» мистецтва &mdash; і зробили його механічним. 
@@ -431,13 +472,13 @@
             <img src="file:///C:/Front-end/WEB-project/architecture/image/image11.jpg" alt="Проєкт оновленого посольства Франції у Відні в стилі ар-нуво." > 
             </dl>  
             <p> Це алькови (тобто ніші) у вигляді гігантських пелюсток. Архітектори розташують їх на даху посольства у два ряди.</p>  
-            <p>&copy; Авторство ЖЕНЯ ЦАЦЕНКО</p> 
+            <p>&copy; Авторство Юлія Нецинська</p> 
 </li>
     </ol> 
 
  </div> 
 
- <div class="Table">
+ <div class="Table show">
     <table border="1">
         <tr>
           <th>Назва курсу</th>
@@ -464,7 +505,7 @@
       
  </div>
 
- <div class="Forms">
+ <div class="Forms show">
     <form>
         <br><br><label for="name">Ім'я:</label>
         <input type="text" id="name" name="name"><br><br>
