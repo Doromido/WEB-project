@@ -1,0 +1,210 @@
+$base-font-family: 'Arial', sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+$primary-color: #007bff;
+$secondary-color: #4b2981;
+$tertiary-color: rgb(128, 0, 255);
+$neutral-color: #333;
+$light-color: #f2f2f2;
+$lighter-color: #f8f8f8;
+$lightest-color: #f9f9f9;
+
+$base-padding: 20px;
+$base-margin: 20px;
+$border-radius: 5px;
+
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $neutral-color;
+    text-align: left;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: $base-padding;
+}
+
+.main-content {
+    background-color: $lightest-color;
+    padding: $base-padding;
+    border-radius: $border-radius;
+}
+
+.introduction {
+    margin-bottom: $base-padding;
+}
+
+h1, h2, h3 {
+    font-family: $base-font-family;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+p {
+    font-size: $base-font-size;
+}
+
+#topic {
+    color: $tertiary-color;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+#subtopic {
+    color: $secondary-color;
+    font-size: 24px;
+}
+
+.text-introduction {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.style {
+    &-block {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: $lighter-color;
+        padding: $base-padding;
+        margin-bottom: $base-padding;
+        border: 1px solid #ccc;
+
+        strong {
+            color: $neutral-color;
+        }
+
+        p {
+            color: #666;
+            font-size: $base-font-size;
+            line-height: 1.5;
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            figcaption {
+                font-style: italic;
+                font-size: 12px;
+                color: #999;
+            }
+        }
+
+        dl {
+            margin-left: 20px;
+
+            dt {
+                font-weight: bold;
+            }
+
+            dd {
+                margin-bottom: 10px;
+            }
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-Table {
+        margin: $base-margin;
+        border-collapse: collapse;
+        width: 100%;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: $light-color;
+        }
+
+        tr:nth-child(even) {
+            background-color: $light-color;
+        }
+    }
+
+    &-Forms {
+        margin: $base-margin;
+
+        form {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: $base-padding;
+            border-radius: $border-radius;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="file"],
+        textarea {
+            width: 300px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-left: 160px;
+        }
+
+        input[type="submit"] {
+            margin-left: 150px;
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            border-radius: $border-radius;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
+
+
+    
