@@ -18,6 +18,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+           
         </style>
     </head>
     <body>
@@ -40,19 +41,6 @@
               <i class="fa fa-bars"></i>
             </a>
           </div>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-</script>
-
         
 
 <div class="introduction"> 
@@ -386,7 +374,7 @@ function myFunction() {
 
 <li class="eclecticism-style"> 
     <!-- Sixth style (Eclecticism)-->
-    <strong>Класицизм (XVIII–XIX століття)</strong> <br>
+    <strong>Еклектика (XIX–XX століття)</strong> <br>
     <p> Дуже важко знайти будівлю, зроблену суворо в одному стилі. 
         Собори, палаци та інші великі об’єкти часто будувалися 100+ років декількома архітекторами — тому уникнути змішування стилів було нереально. 
         Але еклектика — єдина течія, яка поєднує різну архітектуру свідомо.</p>
@@ -479,7 +467,7 @@ function myFunction() {
  </div> 
 
  <div class="Table show">
-    <table border="1">
+    <table >
         <tr>
           <th>Назва курсу</th>
           <th>Постачальник</th>
@@ -503,15 +491,15 @@ function myFunction() {
        
       </table>
       
- </div>
+
 
  <div class="Forms show">
     <form>
         <br><br><label for="name">Ім'я:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name-input" name="name" placeholder="Введіть ваше ім'я">
       
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password"><br><br>
+        <label for="password-input">Пароль:</label>
+<input type="password" id="password-input" name="password" placeholder="Введіть ваш пароль">
       
         <label for="checkbox">Погоджуюсь з умовати договору:</label>
         <input type="checkbox" id="checkbox" name="checkbox"><br><br>
@@ -531,8 +519,106 @@ function myFunction() {
       
         <input type="submit" value="Зареєструватися на курс"><br><br>
     </form>
-      
- </div>
+</div>
+
+ 
+    <h1>Опитування</h1>
+    <form id="partnerSurvey">
+        <p>
+            <label for="name">Введіть ваше ім'я:</label>
+            <input type="text" id="name" name="name">
+        </p>
+        <p>
+            <label for="email">Введіть вашу електронну адресу:</label>
+            <input type="email" id="email" name="email">
+        </p>
+        <p>
+            <label for="password">Введіть пароль:</label>
+            <input type="password" id="password" name="password">
+        </p>
+        <p>
+            <label for="birthdate">Оберіть дату народження:</label>
+            <input type="date" id="birthdate" name="birthdate">
+        </p>
+        <p>
+            <label>Які стилі Вам подобаються?</label> <br>
+            <label for="style-romanesque">Романський стиль</label>
+            <input type="checkbox" id="style-romanesque" name="style" value="Romanesque">
+            <br>
+            <label for="style-gothic">Готика</label>
+            <input type="checkbox" id="style-gothic" name="style" value="Gothic">
+            <br>
+            <label for="style-renaissance">Ренесанс</label>
+            <input type="checkbox" id="style-renaissance" name="style" value="Renaissance">
+            <br>
+            <label for="style-baroque">Бароко</label>
+            <input type="checkbox" id="style-baroque" name="style" value="Baroque">
+            <br>
+            <label for="style-classicism">Класицизм</label>
+            <input type="checkbox" id="style-classicism" name="style" value="Classicism">
+            <br>
+            <label for="style-eclecticism">Еклектика</label>
+            <input type="checkbox" id="style-eclecticism" name="style" value="Eclecticism">
+            <br>
+            <label for="style-art-nouveau">Ар-нуво</label>
+            <input type="checkbox" id="style-art-nouveau" name="style" value="Art-nouveau">
+        </p>
+        
+    
+        
+        <p>
+            <label>Оберіть Ваш улюблений стиль:</label> <br>
+            <label for="roman">Романський стиль</label>
+            <input type="radio" id="roman" name="favorite-style" value="Romanesque">
+            <br>
+            <label for="gothic">Готика</label>
+            <input type="radio" id="gothic" name="favorite-style" value="Gothic">
+            <br>
+            <label for="renaissance">Ренесанс</label>
+            <input type="radio" id="renaissance" name="favorite-style" value="Renaissance">
+            <br>
+            <label for="baroque">Бароко</label>
+            <input type="radio" id="baroque" name="favorite-style" value="Baroque">
+            <br>
+            <label for="classicism">Класицизм</label>
+            <input type="radio" id="classicism" name="favorite-style" value="Classicism">
+            <br>
+            <label for="eclecticism">Еклектика</label>
+            <input type="radio" id="eclecticism" name="favorite-style" value="Eclecticism">
+            <br>
+            <label for="art-nouveau">Ар-нуво</label>
+            <input type="radio" id="art-nouveau" name="favorite-style" value="Art-nouveau">
+        </p>
+        <p>
+            <label for="least-favorite-style">Під яким номером в статті знаходиться Ваш найменш улюблений стиль:</label>
+            <input type="number" id="least-favorite-style" name="least-favorite-style">
+        </p>
+        <p>
+            <label for="course">Ви будете купувати курс?</label>
+            <select id="course" name="course">
+                <option value="yes">Так</option>
+                <option value="no">Ні</option>
+                <option value="maybe">Можливо</option>
+            </select>
+        </p>
+        <p>
+            <label for="file-upload">Завантажте Вашу конкурсну роботу:</label>
+            <input type="file" id="file-upload" name="file">
+        </p>
+        
+        <p>
+            <label for="comments">Додаткові коментарі:</label> <br>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        </p>
+        <input type="submit" value="Відправити">
+    </form>
+
+
+   
+    
+
+<script src="index.js"></script>
+</div>
         </div>
     </body>
 </html>
