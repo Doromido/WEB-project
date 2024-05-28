@@ -90,4 +90,103 @@ function myFunction() {
 
 
 
- 
+ const quizData = {
+    "questions": [
+      {
+        "question": "З чим пов'язували термін «готика», коли він з’явився?",
+        "answers": [
+          "з деструктивністю та варварством",
+          "з вампірами",
+          "з котами",
+          "з моторошними будівлями"
+        ],
+        "correctAnswer": "з деструктивністю та варварством"
+      },
+      {
+        "question": "В якому році перші християни вірили, що станеться апокаліпсис?",
+        "answers": [
+          "1000",
+          "1765",
+          "2014",
+          "2026"
+        ],
+        "correctAnswer": "1000"
+      },
+      {
+        "question": "Коли вперше дізналися про Помпею?",
+        "answers": [
+          "в XV–XVI столітті Європою знову прокотився тренд на римську архітектуру",
+          "в 1200",
+          "в 2000",
+          "в XVII столітті"
+        ],
+        "correctAnswer": "в XV–XVI столітті Європою знову прокотився тренд на римську архітектуру"
+      },
+      {
+        "question": "Який стиль дуже декоративний та динамічний?",
+        "answers": [
+          "Романський стиль",
+          "Європейський стиль",
+          "Бароко",
+          "Відродження"
+        ],
+        "correctAnswer": "Бароко"
+      },
+      {
+        "question": "В якому стилі архітектори втомились від бароко з усіма його прикрасами та почали шукати щось простіше?",
+        "answers": [
+          "Ренесанс",
+          "Ар-нуво",
+          "Готика",
+          "Класицизм"
+        ],
+        "correctAnswer": "Класицизм"
+      }
+    ]
+  };
+
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submitBtn');
+
+  function buildQuiz() {
+    const output = [];
+    quizData.questions.forEach((question, index) => {
+      const answers = [];
+      question.answers.forEach((answer, ansIndex) => {
+        answers.push(
+          `<label>
+            <input type="radio" name="question${index}" value="${answer}">
+            ${answer}
+          </label>`
+        );
+      });
+      output.push(
+        `<div class="question">
+          <div>${question.question}</div>
+          <div class="answers">${answers.join('')}</div>
+        </div>`
+      );
+    });
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults() {
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    let correctAnswers = 0;
+    quizData.questions.forEach((question, index) => {
+      const answerContainer = answerContainers[index];
+      const selector = `input[name=question${index}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      if (userAnswer === question.correctAnswer) {
+        correctAnswers++;
+        answerContainer.style.color = 'green';
+      } else {
+        answerContainer.style.color = 'red';
+      }
+    });
+    resultsContainer.innerHTML = `${correctAnswers} з ${quizData.questions.length} питань відповідно`;
+  }
+
+  buildQuiz();
+  submitButton.addEventListener('click', showResults);
